@@ -58,18 +58,20 @@ interface Particle
  public void move();
  public void show();
 }
+//
 class OddballParticle implements Particle
 {
 
  public double myX, myY, mySpeed, myAngle, mySize;
- public int col;
+ public OddballParticle()
  {
    myX = 450;
    myY = 450;
    mySpeed = (Math.random() * 7) + 1;
    myAngle = (Math.random() * (2 * Math.PI));
  }
- public void move() {
+ 
+public void move() {
    myY += mySpeed;
    mySize = 10;
    if (myY >450)
@@ -81,12 +83,14 @@ class OddballParticle implements Particle
      mySize = 10;
    }
  }
- public void show() {
+ 
+public void show() {
    fill(255);
    rotate((float)(myAngle));
-   ellipse((float)myX, (float)myY, (float)mySize, (float)mySize);
+   ellipse( (float)myX, (float)myY, (float)mySize, (float)mySize );
  }
 }
+//
 class JumboParticle extends NormalParticle
 {
  public void show()
